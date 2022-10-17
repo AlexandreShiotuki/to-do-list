@@ -4,6 +4,7 @@ document.querySelector('.newTask').addEventListener('click', function(){
 }  else if (document.querySelector('#addTask input').value.length > 45) {
     alert('O número máximo de caractéres foi atingido')
     document.querySelector('#addTask input').value = ''
+    document.querySelector('#addTask input').focus()
 }  
   else if (screen.width < 600 && document.querySelector('#addTask input').value.length > 25) { 
     alert('O número máximo de caractéres foi atingido')
