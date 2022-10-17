@@ -15,6 +15,9 @@
 body {
     font-family: cursive;
     height: 100vh;
+    background: linear-gradient(-45deg, #ABA9BF, #BEB7DF, #D4F2D2, #34113F);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
 /* DIVS */
@@ -61,26 +64,20 @@ body {
     padding: 15px 30px;
 }
 
-.check{
-    color: #ffffff;
-    margin-right: 15px;
-    background-color: #f13f48;
-    border: transparent;
-}
-
-.checked {
-    font-style: italic;
-    text-decoration: line-through;
-}
-
 .remove{
     color: #020000;
     background-color: #f13f48;
     border: transparent;
 }
 
-
-
-
-
-
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
