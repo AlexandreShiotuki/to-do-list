@@ -4,15 +4,18 @@ document.querySelector('.newTask').addEventListener('click', function(){
 }  else if (document.querySelector('#addTask input').value.length > 45) {
     alert('O número máximo de caractéres foi atingido')
     document.querySelector('#addTask input').value = ''
-}
+}  
+  else if (screen.width < 600 && document.querySelector('#addTask input').value.length > 25) { 
+    alert('O número máximo de caractéres foi atingido')
+    document.querySelector('#addTask input').value = ''
+  }
  else {
     document.querySelector('#tasks').innerHTML += `
     <div id="task">
       <span id="taskName">
         ${document.querySelector('#addTask input').value}
       </span>
-      <div class="status">
-       <button class="check"><i class="fa-solid fa-check fa-lg"></i></button>   
+      <div class="status">  
        <button class="remove"><i class="fa-solid fa-trash fa-lg"></i></button>
       </div>
       </div>
@@ -25,17 +28,9 @@ document.querySelector('.newTask').addEventListener('click', function(){
         this.parentNode.parentNode.remove(el)
            }
        }
-
- let checkedTask = document.querySelectorAll('.check')
- for (let i=0; i < checkedTask.length; i++) {
-   checkedTask[i].onclick = function() {
-        this.parentNode.parentNode.classList.add('checked')
-        }
-           }
-       }
-
  // LIMPA O INPUT APÓS ADICIONÁ-LO
  document.querySelector('#addTask input').value = ''
-
+ document.querySelector('#addTask input').focus()
+}
 })
 
